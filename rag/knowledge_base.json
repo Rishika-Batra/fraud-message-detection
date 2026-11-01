@@ -1,0 +1,122 @@
+[
+  {
+    "id": "kb01",
+    "title": "Fake KYC Verification and Account Blocked SMS Scam",
+    "note": "Scammers send urgent text messages claiming that your bank account, SIM card, or payment wallet is blocked due to pending KYC verification. These panic-inducing messages instruct victims to call an unauthorized phone number or click a suspicious link to update details immediately. Genuine banks never suspend accounts without formal notice or mandate KYC updates via unsolicited SMS links.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb02",
+    "title": "One-Time Password (OTP) Confidentiality and Sharing Scams",
+    "note": "Fraudsters trick victims into disclosing their One-Time Password (OTP) by pretending to process refunds, update security settings, or cancel unauthorized charges over the phone or SMS. An OTP serves as the final authorization factor to debit money from your account. Legitimate bank staff, payment gateways, and official authorities will never ask you to reveal or share an OTP.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb03",
+    "title": "UPI Collect Request and 'Enter PIN to Receive Money' Scam",
+    "note": "Cyber fraudsters send UPI collect requests or trick targets into entering their UPI PIN under the pretext of sending refunds, lottery winnings, or marketplace payments. Entering your UPI PIN is strictly an authorization to debit money from your account, and a PIN is never required to receive money. Approving an incoming collect request immediately transfers money out of your account to the scammer.",
+    "source_name": "Axis Bank - Avoid UPI Frauds",
+    "url": "https://www.axis.bank.in/fraud-awareness/types-of-scams/avoid-upi-frauds-do-not-fall-prey",
+    "verified": true
+  },
+  {
+    "id": "kb04",
+    "title": "QR Code Scanning Fraud for Receiving Payments",
+    "note": "Scammers send QR codes via chat or email, claiming the recipient must scan the code to receive money for online sales or prizes. Scanning a payment QR code and entering your PIN initiates an outgoing debit transaction from your account, never an incoming credit. Official payment guidelines advise that receiving money never requires scanning QR codes or entering a PIN.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb05",
+    "title": "Fake Lottery, Reward Points, and Prize Draw Announcements",
+    "note": "Victims receive SMS or messaging alerts stating they have won lottery draws, cash prizes, or unredeemed credit card reward points. The message instructs the recipient to click a web link or pay an upfront fee to release the winnings. Authentic financial institutions and lottery organizers do not demand advance fees, banking credentials, or OTPs to disburse funds.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb06",
+    "title": "Phishing Links and Shortened URL Impersonation",
+    "note": "Fraud messages frequently embed shortened web links or lookalike domain names that redirect victims to spoofed banking portals. These deceptive websites replicate authentic bank login screens to steal passwords, card numbers, and OTPs. Official guidelines advise users never to click on unverified links in unsolicited messages and to access banking services only through official websites or apps.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb07",
+    "title": "Impersonation of Bank Officials and Customer Support Helplines",
+    "note": "Criminals pose as bank managers or customer care agents, or publish fake helpline numbers on search engines and social media. They claim an urgent transaction or security issue requires attention and ask the victim to provide card credentials, CVV, or OTPs. Authentic bank employees already have internal account records and never ask customers for sensitive security PINs or passwords.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb08",
+    "title": "Remote-Access Application Installation Scams (AnyDesk, TeamViewer)",
+    "note": "Fraudsters instruct victims to install remote screen-sharing tools like AnyDesk, TeamViewer, or QuickSupport under the pretense of technical support or KYC assistance. Once granted access, the scammer views the device screen in real time to capture passwords, banking credentials, and incoming OTPs. Customers are warned never to install remote-access apps or grant screen sharing on request from unknown callers.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb09",
+    "title": "Urgent Electricity Bill Disconnection Threats",
+    "note": "Scammers broadcast alarming messages stating that the consumer's power supply will be cut off tonight due to an unpaid previous month's bill, instructing them to contact an unofficial personal mobile number immediately. When victims call, scammers direct them to download malicious apps or transfer a small token amount to steal banking details. Real utility distribution companies dispatch formal written bills and never threaten instant disconnection via random mobile numbers.",
+    "source_name": "TODO_VERIFY",
+    "url": "TODO_VERIFY",
+    "verified": false
+  },
+  {
+    "id": "kb10",
+    "title": "Part-Time Job and High-Return Task-Based Investment Scams",
+    "note": "Fraudsters circulate messages promising high daily wages for simple remote tasks, like rating apps, liking videos, or reviewing hotels. Victims are paid small initial amounts to build trust, but are then pressured into paying upfront deposits for premium tasks before their funds are blocked. Authentic organizations do not recruit workers via anonymous messaging or ask job seekers to pay upfront money.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb11",
+    "title": "Fake Payment Refund and Accidental Transfer Claims",
+    "note": "Scammers contact individuals claiming that money was accidentally sent to their account or that a shopping refund is pending release. The fraudster sends a payment link or requests bank access under the pretext of reversing or processing the transaction. Genuine banking transactions credit directly without the recipient needing to authorize links or enter their secret PIN.",
+    "source_name": "TODO_VERIFY",
+    "url": "TODO_VERIFY",
+    "verified": false
+  },
+  {
+    "id": "kb12",
+    "title": "Instant Loan Approval and Pre-Approved Credit Scams",
+    "note": "Messages promising instant, collateral-free loans with zero documentation are sent to exploit borrowers in financial distress. Fraudulent entities demand upfront processing fees, insurance charges, or access to phone contacts before vanishing with the money. The RBI advises citizens to verify that any digital lending platform is tied to an officially registered bank or NBFC listed on the RBI Sachet portal.",
+    "source_name": "TODO_VERIFY",
+    "url": "TODO_VERIFY",
+    "verified": false
+  },
+  {
+    "id": "kb13",
+    "title": "Genuine Bank Transaction Alerts and Safety Indicators",
+    "note": "Genuine bank transaction alerts are informational notifications sent immediately after a debit or credit occurs to help account holders track account activity. Legitimate alerts clearly state the exact transacted amount, the merchant or recipient, the remaining balance, and the last 4 digits of the account. They originate from official registered sender IDs (like AX-SBIINB or VM-HDFCBK) and provide official toll-free numbers or SMS commands to block the card if unauthorized.",
+    "source_name": "TODO_VERIFY",
+    "url": "TODO_VERIFY",
+    "verified": false
+  },
+  {
+    "id": "kb14",
+    "title": "Characteristics of Authentic Bank One-Time Passwords (OTPs)",
+    "note": "Authentic bank OTP messages are generated solely when the account holder initiates a transaction or login attempt and explicitly state: 'Do not share this OTP with anyone, including bank staff.' Genuine OTP alerts mention the exact transaction amount and merchant name for which authorization is sought. They never include shortened links prompting you to submit the OTP on a webpage or instruct you to forward the text.",
+    "source_name": "RBI - BE(A)WARE Booklet on Modus Operandi of Financial Frauds",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
+  },
+  {
+    "id": "kb15",
+    "title": "Reporting Cyber Financial Fraud and Emergency Helplines",
+    "note": "Victims of financial cyber fraud should immediately report the crime to the national helpline 1930 and register a formal complaint on the official portal. Prompt reporting enables banks and law enforcement authorities to swiftly freeze fraudulent transactions and prevent financial loss. Victims should preserve all relevant SMS messages, transaction reference numbers, and screenshots as evidence.",
+    "source_name": "National Cyber Crime Reporting Portal (MHA)",
+    "url": "https://cybercrime.gov.in",
+    "verified": true
+  }
+]

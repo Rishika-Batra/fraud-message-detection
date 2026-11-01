@@ -1,5 +1,21 @@
+# Python virtual environments
+venv/
 .venv/
+
+# Environment variables & secrets
+.env
+
+# Python cache & build artifacts
 __pycache__/
-.DS_Store
+*.pyc
+
+# RAG vector index cache
+rag/index/
+
+# Machine learning model weights & checkpoints
 model/saved_model/
 model/checkpoints/
+
+# OS metadata
+.DS_Store
+Thumbs.db

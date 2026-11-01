@@ -4,3 +4,8 @@ matplotlib
 torch
 transformers
 accelerate
+sentence-transformers
+faiss-cpu
+google-genai
+python-dotenv
+gradio
