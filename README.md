@@ -10,7 +10,7 @@
 
 An end-to-end artificial intelligence security pipeline for detecting fraudulent SMS messages (smishing) and generating **factually grounded, cited explanations**. 
 
-The system pairs a fine-tuned **DistilBERT** neural classifier (**99.42% accuracy**, **97.74% F1-score**) with a **Retrieval-Augmented Generation (RAG)** pipeline. When a suspicious message is flagged, the pipeline retrieves official cyber-fraud advisories from authoritative Indian regulatory bodies (**RBI**, **NPCI**, **Cybercrime Portal**, **CERT-In**) using a local **FAISS** vector store, then uses **Google Gemini** to produce a concise, cited explanation with an explicit **false-positive honesty safeguard** for authentic bank alerts.
+The system pairs a fine-tuned **DistilBERT** neural classifier (**99.42% accuracy**, **97.74% F1-score**) with a **Retrieval-Augmented Generation (RAG)** pipeline. When a suspicious message is flagged, the pipeline retrieves curated advisory notes from RBI public advisories, one Axis Bank fraud-awareness page, and the National Cyber Crime Reporting Portal using a local **FAISS** vector store, then uses **Google Gemini** to produce a concise, cited explanation with an explicit **false-positive honesty safeguard** for authentic bank alerts.
 
 ---
 
@@ -41,7 +41,7 @@ Traditional SMS spam detectors exhibit two major shortcomings:
 ### Our Solution
 A two-stage defensive framework:
 - **Stage 1 (High-Precision Classification):** A lightweight, fine-tuned DistilBERT transformer rapidly categorizes incoming text into legitimate or fraudulent messages.
-- **Stage 2 (Grounded Explanation via RAG):** For flagged messages, semantic vector search retrieves relevant verified advisories from Indian financial and cyber authorities. Google Gemini then synthesizes a verified explanation with inline citations (`[1]`, `[2]`), adhering to an honesty rule that explicitly identifies potential classifier false positives if the text exhibits legitimate bank notification traits.
+- **Stage 2 (Grounded Explanation via RAG):** For flagged messages, semantic vector search retrieves relevant curated advisory notes from RBI public advisories, one Axis Bank fraud-awareness page, and the National Cyber Crime Reporting Portal. Google Gemini then synthesizes a verified explanation with inline citations (`[1]`, `[2]`), adhering to an honesty rule that explicitly identifies potential classifier false positives if the text exhibits legitimate bank notification traits.
 
 ---
 
@@ -49,29 +49,28 @@ A two-stage defensive framework:
 
 ```mermaid
 flowchart TD
-    A["Incoming SMS Message"] --> B["DistilBERT Classifier<br/>(model/predict.py)"]
+    A["Incoming SMS Message"] --> B["DistilBERT Classifier (model/predict.py)"]
     
-    B -->|Legitimate| C["Instant Safe Response<br/>'Message looks legitimate; no explanation needed.'"]
+    B -->|"Legitimate"| C["Instant Safe Response: No explanation needed"]
+    B -->|"Fraud"| D["Sentence Transformer Embedder (all-MiniLM-L6-v2)"]
     
-    B -->|Fraud| D["Sentence Transformer Embedder<br/>(all-MiniLM-L6-v2)"]
+    D --> E["FAISS Vector Index (rag/index/kb.index)"]
     
-    D --> E["FAISS Vector Index<br/>(rag/index/kb.index)"]
-    
-    subgraph Knowledge Base
-        KB["Curated Regulatory Advisories<br/>(RBI, NPCI, CERT-In, Cybercrime Portal)"]
+    subgraph KB_Block ["Knowledge Base"]
+        KB["Curated Advisory Notes (RBI public advisories, one Axis Bank fraud-awareness page, and the National Cyber Crime Reporting Portal)"]
     end
     
-    KB -.->|Built by build_index.py| E
+    KB -.->|"Built by build_index.py"| E
     
-    E -->|Top-k Cosine Similarity >= 0.35| F["Retrieved Official Advisories"]
+    E -->|"Cosine Similarity >= 0.35"| F["Retrieved Official Advisories"]
     
-    F --> G["Grounded Gemini Explainer<br/>(rag/explain.py)"]
+    F --> G["Grounded Gemini Explainer (rag/explain.py)"]
     
     G --> H{"Honesty Check"}
-    H -->|Matches Fraud Advisory| I["Cited Fraud Explanation<br/>with Inline Citations [1], [2]"]
-    H -->|Matches Legitimate OTP/Alert| J["False Positive Warning<br/>'Message matches legitimate bank alert patterns'"]
+    H -->|"Matches Fraud Modus Operandi"| I["Cited Fraud Explanation with Inline Citations"]
+    H -->|"Matches Legitimate Alert Pattern"| J["False Positive Warning: Authentic Bank Alert"]
     
-    C --> K["Gradio Web UI / API Output<br/>(app/app.py)"]
+    C --> K["Gradio Web UI / API Output (app/app.py)"]
     I --> K
     J --> K
 ```
@@ -142,13 +141,14 @@ We evaluated two distinct architectures on the identical unseen test set (518 me
 When a message is flagged as fraud, explanation generation proceeds through three coordinated stages:
 
 ### 1. Curated Knowledge Base (`rag/knowledge_base.json`)
-Contains 15 verified fraud advisories sourced directly from:
-- **Reserve Bank of India (RBI):** *BE(A)WARE Booklet on Modus Operandi of Financial Frauds*
-- **National Payments Corporation of India (NPCI):** *UPI Safety Guidelines*
+Contains 14 curated advisory notes sourced from RBI public advisories, one Axis Bank fraud-awareness page, and the National Cyber Crime Reporting Portal:
+- **Reserve Bank of India (RBI):** *BE(A)WARE Booklet on Modus Operandi of Financial Frauds* and *Consumer Awareness: Cyber Threats and Frauds*
+- **Axis Bank:** *Fraud Awareness - Avoid UPI Frauds*
 - **National Cyber Crime Reporting Portal (`cybercrime.gov.in`):** *Citizen Financial Fraud Advisories*
-- **CERT-In (Indian Computer Emergency Response Team):** *Phishing & Smishing Bulletins*
 
-Advisories address threat categories including **Fake KYC updates**, **Urgent utility / electricity disconnection**, **Part-time work/YouTube task scams**, **Lottery / lucky draw phishing**, **Unregistered instant loan apps**, and **Authentic OTP alert characteristics**.
+The 14 notes are our own short summaries of public advisories, each with a link. The links were checked on 1 November 2026; not every note was checked line by line against the full BE(A)WARE booklet.
+
+Advisories address threat categories including **Fake KYC updates**, **Part-time work/YouTube task scams**, **Lottery / lucky draw phishing**, **Unregistered instant loan apps**, and **Authentic OTP alert characteristics**.
 
 ### 2. FAISS Semantic Retrieval (`rag/retriever.py`)
 - Employs `all-MiniLM-L6-v2` to generate 384-dimensional dense vectors.
@@ -198,7 +198,7 @@ fraud-message-detection/
 │       └── misclassified_examples.csv # Test set error analysis
 ├── rag/
 │   ├── __init__.py
-│   ├── knowledge_base.json        # 15 curated regulatory fraud advisories
+│   ├── knowledge_base.json        # 14 curated advisory notes
 │   ├── build_index.py             # Encodes notes and creates FAISS index
 │   ├── retriever.py               # Top-k FAISS semantic search (cosine >= 0.35)
 │   ├── explain.py                 # Grounded Gemini explanation generator
@@ -320,8 +320,8 @@ Open your browser at: **`http://127.0.0.1:7860`**
 - **Instant Interactive Analysis:** Paste any custom SMS or WhatsApp message.
 - **Preset Demonstration Examples:** One-click presets covering KYC fraud, utility threats, work-from-home scams, legitimate chats, and authentic bank alerts.
 - **Visual Confidence Metrics:** Displays classification label with high-visibility badge and percentage confidence score.
-- **Cited Markdown Explanations:** Explanations cite verified authorities inline (`[1]`, `[2]`).
-- **Official Advisory Links:** Direct clickable URLs to regulatory releases (RBI, NPCI, Cybercrime Portal).
+- **Cited Markdown Explanations:** Explanations cite curated advisory notes inline (`[1]`, `[2]`).
+- **Source Links:** clickable URLs to the advisories each note is based on.
 
 ---
 
@@ -357,4 +357,4 @@ Results are logged in both [samples/sample_outputs.json](samples/sample_outputs.
 
 ## 📜 License
 
-This project was developed for academic research and educational evaluation. Datasets and regulatory advisories remain the property of their respective originators (UCI Machine Learning Repository, Reserve Bank of India, NPCI, CERT-In).
+This project was developed for academic research and educational evaluation. Datasets and regulatory advisories remain the property of their respective originators (UCI Machine Learning Repository, Reserve Bank of India, Axis Bank, National Cyber Crime Reporting Portal).
