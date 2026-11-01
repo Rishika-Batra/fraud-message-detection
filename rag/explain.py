@@ -26,7 +26,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configurable Gemini model name (easy to swap)
-GEMINI_MODEL_NAME = "gemini-2.5-flash"
+GEMINI_MODEL_NAME = "gemini-3.5-flash"
 
 # Single unified prompt template enforcing all grounding and viva constraints
 EXPLANATION_PROMPT_TEMPLATE = """You are an expert fraud-analysis assistant for an SMS security pipeline.

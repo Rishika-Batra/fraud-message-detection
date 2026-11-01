@@ -64,14 +64,6 @@
     "verified": true
   },
   {
-    "id": "kb09",
-    "title": "Urgent Electricity Bill Disconnection Threats",
-    "note": "Scammers broadcast alarming messages stating that the consumer's power supply will be cut off tonight due to an unpaid previous month's bill, instructing them to contact an unofficial personal mobile number immediately. When victims call, scammers direct them to download malicious apps or transfer a small token amount to steal banking details. Real utility distribution companies dispatch formal written bills and never threaten instant disconnection via random mobile numbers.",
-    "source_name": "TODO_VERIFY",
-    "url": "TODO_VERIFY",
-    "verified": false
-  },
-  {
     "id": "kb10",
     "title": "Part-Time Job and High-Return Task-Based Investment Scams",
     "note": "Fraudsters circulate messages promising high daily wages for simple remote tasks, like rating apps, liking videos, or reviewing hotels. Victims are paid small initial amounts to build trust, but are then pressured into paying upfront deposits for premium tasks before their funds are blocked. Authentic organizations do not recruit workers via anonymous messaging or ask job seekers to pay upfront money.",
@@ -82,26 +74,26 @@
   {
     "id": "kb11",
     "title": "Fake Payment Refund and Accidental Transfer Claims",
-    "note": "Scammers contact individuals claiming that money was accidentally sent to their account or that a shopping refund is pending release. The fraudster sends a payment link or requests bank access under the pretext of reversing or processing the transaction. Genuine banking transactions credit directly without the recipient needing to authorize links or enter their secret PIN.",
-    "source_name": "TODO_VERIFY",
-    "url": "TODO_VERIFY",
-    "verified": false
+    "note": "Fraudsters send fake UPI collect requests or payment links, claiming a refund is pending, to trick people into approving a payment; the user should never share a PIN or approve a request to receive money.",
+    "source_name": "RBI - Consumer Awareness: Cyber Threats and Frauds (28 Jan 2022)",
+    "url": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53185",
+    "verified": true
   },
   {
     "id": "kb12",
     "title": "Instant Loan Approval and Pre-Approved Credit Scams",
     "note": "Messages promising instant, collateral-free loans with zero documentation are sent to exploit borrowers in financial distress. Fraudulent entities demand upfront processing fees, insurance charges, or access to phone contacts before vanishing with the money. The RBI advises citizens to verify that any digital lending platform is tied to an officially registered bank or NBFC listed on the RBI Sachet portal.",
-    "source_name": "TODO_VERIFY",
-    "url": "TODO_VERIFY",
-    "verified": false
+    "source_name": "RBI - BE(A)WARE: A Booklet on Modus Operandi of Financial Frauds (7 Mar 2022)",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=53372",
+    "verified": true
   },
   {
     "id": "kb13",
     "title": "Genuine Bank Transaction Alerts and Safety Indicators",
     "note": "Genuine bank transaction alerts are informational notifications sent immediately after a debit or credit occurs to help account holders track account activity. Legitimate alerts clearly state the exact transacted amount, the merchant or recipient, the remaining balance, and the last 4 digits of the account. They originate from official registered sender IDs (like AX-SBIINB or VM-HDFCBK) and provide official toll-free numbers or SMS commands to block the card if unauthorized.",
-    "source_name": "TODO_VERIFY",
-    "url": "TODO_VERIFY",
-    "verified": false
+    "source_name": "RBI - Consumer Awareness: Cyber Threats and Frauds (28 Jan 2022)",
+    "url": "https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53185",
+    "verified": true
   },
   {
     "id": "kb14",
